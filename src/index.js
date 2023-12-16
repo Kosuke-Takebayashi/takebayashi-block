@@ -2,13 +2,18 @@
  * WordPress dependencies
  */
 import { registerBlockType } from "@wordpress/blocks";
+import { useBlockProps } from "@wordpress/block-editor";
 
 // Register the block
 registerBlockType("gutenberg-examples/example-01-basic-esnext", {
-    edit: function () {
-        return <p style={{color: 'red'}}>初めてのカスタムブロックができた</p>;
+    edit() {
+        const blockProps = useBlockProps();
+
+        return <p {...blockProps}>Hello World (from the editor, in green).</p>;
     },
-    save: function () {
-        return <p>初めてのカスタムブロックができた</p>;
+    save() {
+        const blockProps = useBlockProps.save();
+
+        return <p {...blockProps}>Hello World (from the frontend, in red).</p>;
     },
 });

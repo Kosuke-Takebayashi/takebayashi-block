@@ -4,5 +4,7 @@
     "name": "gutenberg-examples/example-01-basic-esnext",
     "category": "layout",
     "icon": "universal-access-alt",
-    "editorScript": "file:./build/index.js"
+    "editorScript": "file:./build/index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css"
 }
